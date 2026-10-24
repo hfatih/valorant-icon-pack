@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valorant Icon Pack — 15 Tuşlu Stream Deck & evoX İnteraktif Galeri</title>
+  <style>
+    :root {
+      --bg: #0f1923;
+      --panel: #1b2733;
+      --card: #253443;
+      --card-hover: #334659;
+      --accent: #ff4655;
+      --accent-glow: rgba(255, 70, 85, 0.45);
+      --text: #ece8e1;
+      --text-muted: #9baec2;
+      --border: #3b4e60;
+      --deck-body: #0a1118;
+      --deck-bezel: #1d2c3a;
+      --key-border: #354a5e;
+      --key-glow: 0 0 16px rgba(255, 70, 85, 0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      background-image: radial-gradient(circle at 50% 0%, #2b1e2a 0%, #0f1923 75%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(27, 39, 51, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand { display: flex; align-items: center; gap: 1rem; }
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff4655, #bd1827);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px var(--accent-glow);
+      overflow: hidden;
+    }
+    .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .brand h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #ff7a85);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+    .brand p { font-size: 0.82rem; color: var(--text-muted); }
+    .header-actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+    .btn {
+      background: linear-gradient(135deg, #ff4655, #cc2233);
+      color: #fff;
+      padding: 0.55rem 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px var(--accent-glow);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px var(--accent-glow); }
+    .btn-outline {
+      background: rgba(37, 52, 67, 0.6);
+      border: 1px solid var(--border);
+      color: var(--text);
+      box-shadow: none;
+    }
+    .btn-outline:hover { border-color: var(--accent); background: rgba(255, 70, 85, 0.15); }
+    
+    main { flex: 1; max-width: 1400px; margin: 0 auto; padding: 2.2rem 1.5rem; width: 100%; }
+    
+    .simulator-container {
+      background: linear-gradient(180deg, rgba(27, 39, 51, 0.9) 0%, rgba(15, 25, 35, 0.95) 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin-bottom: 2.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+    }
+    .sim-header { text-align: center; margin-bottom: 1.8rem; }
+    .sim-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: rgba(255, 70, 85, 0.15);
+      border: 1px solid rgba(255, 70, 85, 0.35);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+    }
+    .sim-header h2 { font-size: 1.6rem; font-weight: 800; }
+    .sim-header p { font-size: 0.9rem; color: var(--text-muted); }
+    
+    .deck-frame {
+      background: linear-gradient(145deg, #16222d, #091017);
+      border: 3px solid var(--deck-bezel);
+      border-radius: 28px;
+      padding: 24px 26px;
+      box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.05), inset 0 -8px 20px rgba(0, 0, 0, 0.9), 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 70, 85, 0.15);
+      position: relative;
+    }
+    .deck-frame::after {
+      content: "STREAM DECK • VALORANT AGENTS";
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      font-weight: 800;
+      color: rgba(155, 174, 194, 0.35);
+    }
+    .deck-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 84px);
+      grid-template-rows: repeat(3, 84px);
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .deck-key {
+      width: 84px;
+      height: 84px;
+      background: radial-gradient(circle at 50% 30%, #203140 0%, #0a1118 100%);
+      border: 2px solid var(--key-border);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+    }
+    .deck-key:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: var(--key-glow), 0 8px 18px rgba(0, 0, 0, 0.8);
+    }
+    .deck-key.active-slot {
+      border-color: #fff;
+      box-shadow: 0 0 24px rgba(255, 70, 85, 0.9), inset 0 0 12px rgba(255, 255, 255, 0.4);
+      transform: scale(1.06);
+    }
+    .deck-key img { width: 100%; height: 100%; object-fit: contain; padding: 6px; display: block; }
+    .deck-key .slot-num {
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1px 4px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    .sim-controls { margin-top: 1.4rem; display: flex; gap: 0.8rem; justify-content: center; }
+    .sim-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sim-btn:hover { background: var(--panel); color: var(--text); border-color: var(--accent); }
+    
+    .filter-tabs { display: flex; gap: 0.6rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .filter-btn {
+      background: var(--card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { background: var(--panel); color: var(--text); border-color: var(--accent); }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--accent), #cc2233);
+      color: #fff;
+      border-color: transparent;
+      font-weight: 700;
+      box-shadow: 0 4px 12px var(--accent-glow);
+    }
+
+    .search-input-wrap { position: relative; margin-bottom: 2rem; width: 100%; }
+    .search-input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.85rem 1.4rem 0.85rem 3rem;
+      border-radius: 14px;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-input:focus { border-color: var(--accent); box-shadow: 0 0 16px var(--accent-glow); }
+    .search-icon { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+    
+    .gallery-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; }
+    .gallery-title { font-size: 1.1rem; font-weight: 700; }
+    .gallery-count { font-size: 0.85rem; color: var(--text-muted); }
+    
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(136px, 1fr)); gap: 16px; }
+    .icon-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .icon-card:hover {
+      background: var(--card-hover);
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), 0 0 16px var(--accent-glow);
+    }
+    .icon-card .img-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 14px;
+      background: #0f1923;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+    .icon-card img { width: 100%; height: 100%; object-fit: contain; }
+    .icon-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .icon-cat { font-size: 0.68rem; color: var(--text-muted); }
+    
+    .hint-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(27, 39, 51, 0.95);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      padding: 0.8rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+      font-size: 0.88rem;
+      z-index: 1000;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-logo"><img src="cover.png" alt="Valorant"></div>
+      <div>
+        <h1>Valorant Icon Pack</h1>
+        <p>55 Ajan ve Durum İkonu • evoX & Stream Deck</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="Valorant Icon Pack.evoxpack" class="btn" download>📦 .evoxpack İndir (55 İkon - 10 MB)</a>
+      <a href="red_neon_gallery.html" class="btn btn-outline">🔴 Red Neon</a>
+      <a href="purple_neon_gallery.html" class="btn btn-outline">🟣 Purple Neon</a>
+      <a href="gif_icons_gallery.html" class="btn btn-outline">✨ Gif Icon Packs</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="simulator-container">
+      <div class="sim-header">
+        <span class="sim-badge">15 Tuşlu Donanım Konsolu</span>
+        <h2>Stream Deck & evoX Canlı Konsol Simülatörü</h2>
+        <p>Aşağıdaki galeriden herhangi bir ajan ikonuna tıklayarak seçili tuşa yerleştirin</p>
+      </div>
+      <div class="deck-frame">
+        <div class="deck-grid" id="deckGrid"></div>
+      </div>
+      <div class="sim-controls">
+        <button class="sim-btn" id="btnRandom">🎲 Rastgele 15 Tuş</button>
+        <button class="sim-btn" id="btnReset">↺ Sıfırla</button>
+      </div>
+    </div>
+
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">Tümü (55)</button>
+      <button class="filter-btn" data-filter="Aktif Ajan">Aktif Ajanlar (28)</button>
+      <button class="filter-btn" data-filter="Kapalı Durum">Kapalı Durumlar (27)</button>
+    </div>
+
+    <div class="search-input-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Ajan ara (jett, reyna, phoenix, sage, chamber, viper, gekko...)...">
+    </div>
+
+    <div class="gallery-header">
+      <div class="gallery-title" id="galleryTitle">Tüm Ajan İkonları</div>
+      <div class="gallery-count" id="galleryCount">55 İkon Gösteriliyor</div>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </main>
+
+  <div class="hint-toast" id="hintToast">✨ Tuş güncellendi!</div>
+
+  <script>
+    const INITIAL_KEYS = ["Jett.png", "Reyna.png", "Phoenix.png", "Raze.png", "Omen.png", "Sage.png", "Chamber.png", "Sova.png", "Viper.png", "Killjoy.png", "Neon.png", "Fade.png", "Gekko.png", "Clove.png", "Iso.png"];
+    const ASSETS = [{"name": "Astra (Kapalı)", "filename": "Astra-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Astra", "filename": "Astra.png", "category": "Aktif Ajan"}, {"name": "Breach (Kapalı)", "filename": "Breach-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Breach", "filename": "Breach.png", "category": "Aktif Ajan"}, {"name": "Brimstone (Kapalı)", "filename": "Brimstone-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Brimstone", "filename": "Brimstone.png", "category": "Aktif Ajan"}, {"name": "Chamber (Kapalı)", "filename": "Chamber-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Chamber", "filename": "Chamber.png", "category": "Aktif Ajan"}, {"name": "Clove (Kapalı)", "filename": "Clove-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Clove", "filename": "Clove.png", "category": "Aktif Ajan"}, {"name": "Cypher (Kapalı)", "filename": "Cypher-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Cypher", "filename": "Cypher.png", "category": "Aktif Ajan"}, {"name": "Deadlock (Kapalı)", "filename": "Deadlock-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Deadlock", "filename": "Deadlock.png", "category": "Aktif Ajan"}, {"name": "Fade (Kapalı)", "filename": "Fade-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Fade", "filename": "Fade.png", "category": "Aktif Ajan"}, {"name": "Gekko (Kapalı)", "filename": "Gekko-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Gekko", "filename": "Gekko.png", "category": "Aktif Ajan"}, {"name": "Harbor (Kapalı)", "filename": "Harbor-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Harbor", "filename": "Harbor.png", "category": "Aktif Ajan"}, {"name": "Iso (Kapalı)", "filename": "Iso-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Iso", "filename": "Iso.png", "category": "Aktif Ajan"}, {"name": "Jett (Kapalı)", "filename": "Jett-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Jett", "filename": "Jett.png", "category": "Aktif Ajan"}, {"name": "Kayo (Kapalı)", "filename": "Kayo-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Kayo", "filename": "Kayo.png", "category": "Aktif Ajan"}, {"name": "Killjoy (Kapalı)", "filename": "Killjoy-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Killjoy", "filename": "Killjoy.png", "category": "Aktif Ajan"}, {"name": "Logo-Açık", "filename": "Logo-Açık.png", "category": "Aktif Ajan"}, {"name": "Logo (Kapalı)", "filename": "Logo-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Logo-Pembe-%40", "filename": "Logo-Pembe-40.png", "category": "Aktif Ajan"}, {"name": "Logo-Pembe", "filename": "Logo-Pembe.png", "category": "Aktif Ajan"}, {"name": "Logo", "filename": "Logo.png", "category": "Aktif Ajan"}, {"name": "Neon (Kapalı)", "filename": "Neon-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Neon", "filename": "Neon.png", "category": "Aktif Ajan"}, {"name": "Omen (Kapalı)", "filename": "Omen-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Omen", "filename": "Omen.png", "category": "Aktif Ajan"}, {"name": "Phoenix (Kapalı)", "filename": "Phoenix-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Phoenix", "filename": "Phoenix.png", "category": "Aktif Ajan"}, {"name": "Raze (Kapalı)", "filename": "Raze-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Raze", "filename": "Raze.png", "category": "Aktif Ajan"}, {"name": "Reyna (Kapalı)", "filename": "Reyna-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Reyna", "filename": "Reyna.png", "category": "Aktif Ajan"}, {"name": "Sage (Kapalı)", "filename": "Sage-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Sage", "filename": "Sage.png", "category": "Aktif Ajan"}, {"name": "Skye (Kapalı)", "filename": "Skye-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Skye", "filename": "Skye.png", "category": "Aktif Ajan"}, {"name": "Sova (Kapalı)", "filename": "Sova-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Sova", "filename": "Sova.png", "category": "Aktif Ajan"}, {"name": "Viper (Kapalı)", "filename": "Viper-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Viper", "filename": "Viper.png", "category": "Aktif Ajan"}, {"name": "Vyse (Kapalı)", "filename": "Vyse-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Vyse", "filename": "Vyse.png", "category": "Aktif Ajan"}, {"name": "Yoru (Kapalı)", "filename": "Yoru-Kapalı.png", "category": "Kapalı Durum"}, {"name": "Yoru", "filename": "Yoru.png", "category": "Aktif Ajan"}];
+    let activeSlotIndex = 0;
+
+    function resolveImg(imgEl, filename) {
+      imgEl.onerror = function() {
+        if (!this.dataset.tried) {
+          this.dataset.tried = "1";
+          this.src = "icons/" + filename;
+        }
+      };
+      imgEl.src = "icons/" + filename;
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById('hintToast');
+      toast.textContent = text;
+      toast.style.display = 'block';
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => { toast.style.display = 'none'; }, 2200);
+    }
+
+    const deckGrid = document.getElementById('deckGrid');
+    function initDeck(keys) {
+      deckGrid.innerHTML = '';
+      keys.forEach((k, idx) => {
+        const div = document.createElement('div');
+        div.className = 'deck-key' + (idx === activeSlotIndex ? ' active-slot' : '');
+        div.dataset.slot = idx;
+        
+        const slotNum = document.createElement('span');
+        slotNum.className = 'slot-num';
+        slotNum.textContent = (idx + 1);
+        div.appendChild(slotNum);
+        
+        const img = document.createElement('img');
+        resolveImg(img, k);
+        div.appendChild(img);
+        
+        div.onclick = () => {
+          document.querySelectorAll('.deck-key').forEach(k => k.classList.remove('active-slot'));
+          div.classList.add('active-slot');
+          activeSlotIndex = idx;
+          showToast(`Tuş #${idx + 1} seçildi.`);
+        };
+        deckGrid.appendChild(div);
+      });
+    }
+    initDeck(INITIAL_KEYS);
+
+    const galleryGrid = document.getElementById('galleryGrid');
+    function renderGallery(items) {
+      galleryGrid.innerHTML = '';
+      document.getElementById('galleryCount').textContent = `${items.length} İkon Gösteriliyor`;
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'icon-card';
+        card.title = `${item.name} — Tıkla ve Stream Deck'e yerleştir`;
+        
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'img-wrap';
+        const img = document.createElement('img');
+        img.loading = "lazy";
+        resolveImg(img, item.filename);
+        imgWrap.appendChild(img);
+
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'icon-name';
+        nameDiv.textContent = item.name;
+
+        const catDiv = document.createElement('div');
+        catDiv.className = 'icon-cat';
+        catDiv.textContent = item.category;
+
+        card.appendChild(imgWrap);
+        card.appendChild(nameDiv);
+        card.appendChild(catDiv);
+
+        card.onclick = () => {
+          const allKeys = deckGrid.querySelectorAll('.deck-key');
+          const targetKey = allKeys[activeSlotIndex] || allKeys[0];
+          if (targetKey) {
+            const keyImg = targetKey.querySelector('img');
+            resolveImg(keyImg, item.filename);
+            showToast(`[Tuş #${activeSlotIndex + 1}] "${item.name}" yerleştirildi!`);
+            allKeys.forEach(k => k.classList.remove('active-slot'));
+            activeSlotIndex = (activeSlotIndex + 1) % 15;
+            allKeys[activeSlotIndex].classList.add('active-slot');
+          }
+        };
+        galleryGrid.appendChild(card);
+      });
+    }
+    renderGallery(ASSETS);
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        if (f === 'all') {
+          renderGallery(ASSETS);
+        } else {
+          renderGallery(ASSETS.filter(a => a.category === f));
+        }
+      };
+    });
+
+    document.getElementById('searchInput').oninput = (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      const filtered = ASSETS.filter(a => a.name.toLowerCase().includes(q) || a.filename.toLowerCase().includes(q));
+      renderGallery(filtered);
+    };
+
+    document.getElementById('btnReset').onclick = () => {
+      activeSlotIndex = 0;
+      initDeck(INITIAL_KEYS);
+      showToast("Varsayılana sıfırlandı.");
+    };
+
+    document.getElementById('btnRandom').onclick = () => {
+      const shuffled = [...ASSETS].sort(() => 0.5 - Math.random());
+      const r15 = shuffled.slice(0, 15).map(a => a.filename);
+      activeSlotIndex = 0;
+      initDeck(r15);
+      showToast("🎲 Rastgele dolduruldu!");
+    };
+  </script>
+</body>
+</html>

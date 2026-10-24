@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "packageType": "icon_pack",
+  "name": "Valorant Icon Pack",
+  "description": "evoX ve Stream Deck için 55 adet resmi Valorant ajan ve durum ikonu paketi.",
+  "version": "1.0.0",
+  "author": {
+    "id": "hfatih",
+    "name": "Fatih Han"
+  },
+  "requiredActions": [],
+  "requiredIntegrations": [],
+  "coverImage": "cover.png",
+  "createdWith": "evox-deck-v2",
+  "createdAt": "2026-10-24T03:05:50.000Z",
+  "assets": {
+    "icons": [
+      {
+        "id": "val-astra-kapalı",
+        "name": "Astra (Kapalı)",
+        "path": "assets/icons/Astra-Kapalı.png"
+      },
+      {
+        "id": "val-astra",
+        "name": "Astra",
+        "path": "assets/icons/Astra.png"
+      },
+      {
+        "id": "val-breach-kapalı",
+        "name": "Breach (Kapalı)",
+        "path": "assets/icons/Breach-Kapalı.png"
+      },
+      {
+        "id": "val-breach",
+        "name": "Breach",
+        "path": "assets/icons/Breach.png"
+      },
+      {
+        "id": "val-brimstone-kapalı",
+        "name": "Brimstone (Kapalı)",
+        "path": "assets/icons/Brimstone-Kapalı.png"
+      },
+      {
+        "id": "val-brimstone",
+        "name": "Brimstone",
+        "path": "assets/icons/Brimstone.png"
+      },
+      {
+        "id": "val-chamber-kapalı",
+        "name": "Chamber (Kapalı)",
+        "path": "assets/icons/Chamber-Kapalı.png"
+      },
+      {
+        "id": "val-chamber",
+        "name": "Chamber",
+        "path": "assets/icons/Chamber.png"
+      },
+      {
+        "id": "val-clove-kapalı",
+        "name": "Clove (Kapalı)",
+        "path": "assets/icons/Clove-Kapalı.png"
+      },
+      {
+        "id": "val-clove",
+        "name": "Clove",
+        "path": "assets/icons/Clove.png"
+      },
+      {
+        "id": "val-cypher-kapalı",
+        "name": "Cypher (Kapalı)",
+        "path": "assets/icons/Cypher-Kapalı.png"
+      },
+      {
+        "id": "val-cypher",
+        "name": "Cypher",
+        "path": "assets/icons/Cypher.png"
+      },
+      {
+        "id": "val-deadlock-kapalı",
+        "name": "Deadlock (Kapalı)",
+        "path": "assets/icons/Deadlock-Kapalı.png"
+      },
+      {
+        "id": "val-deadlock",
+        "name": "Deadlock",
+        "path": "assets/icons/Deadlock.png"
+      },
+      {
+        "id": "val-fade-kapalı",
+        "name": "Fade (Kapalı)",
+        "path": "assets/icons/Fade-Kapalı.png"
+      },
+      {
+        "id": "val-fade",
+        "name": "Fade",
+        "path": "assets/icons/Fade.png"
+      },
+      {
+        "id": "val-gekko-kapalı",
+        "name": "Gekko (Kapalı)",
+        "path": "assets/icons/Gekko-Kapalı.png"
+      },
+      {
+        "id": "val-gekko",
+        "name": "Gekko",
+        "path": "assets/icons/Gekko.png"
+      },
+      {
+        "id": "val-harbor-kapalı",
+        "name": "Harbor (Kapalı)",
+        "path": "assets/icons/Harbor-Kapalı.png"
+      },
+      {
+        "id": "val-harbor",
+        "name": "Harbor",
+        "path": "assets/icons/Harbor.png"
+      },
+      {
+        "id": "val-iso-kapalı",
+        "name": "Iso (Kapalı)",
+        "path": "assets/icons/Iso-Kapalı.png"
+      },
+      {
+        "id": "val-iso",
+        "name": "Iso",
+        "path": "assets/icons/Iso.png"
+      },
+      {
+        "id": "val-jett-kapalı",
+        "name": "Jett (Kapalı)",
+        "path": "assets/icons/Jett-Kapalı.png"
+      },
+      {
+        "id": "val-jett",
+        "name": "Jett",
+        "path": "assets/icons/Jett.png"
+      },
+      {
+        "id": "val-kayo-kapalı",
+        "name": "Kayo (Kapalı)",
+        "path": "assets/icons/Kayo-Kapalı.png"
+      },
+      {
+        "id": "val-kayo",
+        "name": "Kayo",
+        "path": "assets/icons/Kayo.png"
+      },
+      {
+        "id": "val-killjoy-kapalı",
+        "name": "Killjoy (Kapalı)",
+        "path": "assets/icons/Killjoy-Kapalı.png"
+      },
+      {
+        "id": "val-killjoy",
+        "name": "Killjoy",
+        "path": "assets/icons/Killjoy.png"
+      },
+      {
+        "id": "val-logo-açık",
+        "name": "Logo-Açık",
+        "path": "assets/icons/Logo-Açık.png"
+      },
+      {
+        "id": "val-logo-kapalı",
+        "name": "Logo (Kapalı)",
+        "path": "assets/icons/Logo-Kapalı.png"
+      },
+      {
+        "id": "val-logo-pembe-40",
+        "name": "Logo-Pembe-40",
+        "path": "assets/icons/Logo-Pembe-40.png"
+      },
+      {
+        "id": "val-logo-pembe",
+        "name": "Logo-Pembe",
+        "path": "assets/icons/Logo-Pembe.png"
+      },
+      {
+        "id": "val-logo",
+        "name": "Logo",
+        "path": "assets/icons/Logo.png"
+      },
+      {
+        "id": "val-neon-kapalı",
+        "name": "Neon (Kapalı)",
+        "path": "assets/icons/Neon-Kapalı.png"
+      },
+      {
+        "id": "val-neon",
+        "name": "Neon",
+        "path": "assets/icons/Neon.png"
+      },
+      {
+        "id": "val-omen-kapalı",
+        "name": "Omen (Kapalı)",
+        "path": "assets/icons/Omen-Kapalı.png"
+      },
+      {
+        "id": "val-omen",
+        "name": "Omen",
+        "path": "assets/icons/Omen.png"
+      },
+      {
+        "id": "val-phoenix-kapalı",
+        "name": "Phoenix (Kapalı)",
+        "path": "assets/icons/Phoenix-Kapalı.png"
+      },
+      {
+        "id": "val-phoenix",
+        "name": "Phoenix",
+        "path": "assets/icons/Phoenix.png"
+      },
+      {
+        "id": "val-raze-kapalı",
+        "name": "Raze (Kapalı)",
+        "path": "assets/icons/Raze-Kapalı.png"
+      },
+      {
+        "id": "val-raze",
+        "name": "Raze",
+        "path": "assets/icons/Raze.png"
+      },
+      {
+        "id": "val-reyna-kapalı",
+        "name": "Reyna (Kapalı)",
+        "path": "assets/icons/Reyna-Kapalı.png"
+      },
+      {
+        "id": "val-reyna",
+        "name": "Reyna",
+        "path": "assets/icons/Reyna.png"
+      },
+      {
+        "id": "val-sage-kapalı",
+        "name": "Sage (Kapalı)",
+        "path": "assets/icons/Sage-Kapalı.png"
+      },
+      {
+        "id": "val-sage",
+        "name": "Sage",
+        "path": "assets/icons/Sage.png"
+      },
+      {
+        "id": "val-skye-kapalı",
+        "name": "Skye (Kapalı)",
+        "path": "assets/icons/Skye-Kapalı.png"
+      },
+      {
+        "id": "val-skye",
+        "name": "Skye",
+        "path": "assets/icons/Skye.png"
+      },
+      {
+        "id": "val-sova-kapalı",
+        "name": "Sova (Kapalı)",
+        "path": "assets/icons/Sova-Kapalı.png"
+      },
+      {
+        "id": "val-sova",
+        "name": "Sova",
+        "path": "assets/icons/Sova.png"
+      },
+      {
+        "id": "val-viper-kapalı",
+        "name": "Viper (Kapalı)",
+        "path": "assets/icons/Viper-Kapalı.png"
+      },
+      {
+        "id": "val-viper",
+        "name": "Viper",
+        "path": "assets/icons/Viper.png"
+      },
+      {
+        "id": "val-vyse-kapalı",
+        "name": "Vyse (Kapalı)",
+        "path": "assets/icons/Vyse-Kapalı.png"
+      },
+      {
+        "id": "val-vyse",
+        "name": "Vyse",
+        "path": "assets/icons/Vyse.png"
+      },
+      {
+        "id": "val-yoru-kapalı",
+        "name": "Yoru (Kapalı)",
+        "path": "assets/icons/Yoru-Kapalı.png"
+      },
+      {
+        "id": "val-yoru",
+        "name": "Yoru",
+        "path": "assets/icons/Yoru.png"
+      }
+    ],
+    "sounds": []
+  }
+}
