@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/badge/Platformlar-Stream%20Deck%20%7C%20evoX-0078D6?style=flat-square" alt="Platformlar">
     <img src="https://img.shields.io/badge/%C3%87%C3%B6z%C3%BCn%C3%BCrl%C3%BCk-Retina%20144x144%20PNG-10B981?style=flat-square" alt="Çözünürlük">
     <img src="https://img.shields.io/badge/Do%C4%9Frulama-100%25%20evoX%20Zod-22c55e?style=flat-square" alt="evoX Doğrulandı">
-    <img src="https://img.shields.io/badge/Lisans-MIT-blue?style=flat-square" alt="Lisans MIT">
+    <img src="https://img.shields.io/badge/Lisans-GPL--3.0-blue?style=flat-square" alt="GPL-3.0-only">
   </p>
 </div>
 
@@ -88,4 +88,6 @@ Valorant Logo, Logo Açık, Logo Kapalı, Logo Pembe, Logo Pembe %40 Saydam.
 ---
 
 ## 📄 Lisans
-[MIT Lisansı](LICENSE) altında sunulmaktadır. Valorant ve ajan logoları Riot Games, Inc.'in tescilli markalarıdır.
+[GNU GPL v3.0](LICENSE) altında sunulmaktadır. Valorant ve ajan logoları Riot Games, Inc.'in tescilli markalarıdır.
+
+Bu sürümde bize ait kod ve özgün içerik [GNU GPL v3.0](LICENSE) (GPL-3.0-only) altında yayımlanır. Üçüncü taraf kod, yazı tipleri, görseller, veriler ve marka öğeleri kendi lisans ve atıflarına tabidir. [Önceki lisans ve telif bildirimi](licenses/previous-license.txt). Riot Games görselleri ve markaları Riot Games’in koşullarına tabidir.

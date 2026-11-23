@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/badge/Platforms-Stream%20Deck%20%7C%20evoX-0078D6?style=flat-square" alt="Platforms">
     <img src="https://img.shields.io/badge/Resolution-Retina%20144x144%20PNG-10B981?style=flat-square" alt="Resolution">
     <img src="https://img.shields.io/badge/Validation-100%25%20evoX%20Zod-22c55e?style=flat-square" alt="evoX Validated">
-    <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License MIT">
+    <img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square" alt="GPL-3.0-only">
   </p>
   <p align="center">
     <img src="https://hits.sh/github.com/hfatih/valorant-icon-pack.svg?style=flat-square&label=views&color=ff4655" alt="Views">
@@ -120,4 +120,6 @@ Additionally, the suite includes official Valorant emblems and custom stylized l
 ---
 
 ## 📄 License & Legal Notice
-Distributed under the [MIT License](LICENSE). Valorant and agent logos are trademarks or registered trademarks of Riot Games, Inc. This project is an unofficial fan creation.
+Distributed under the [GNU GPL v3.0](LICENSE). Valorant and agent logos are trademarks or registered trademarks of Riot Games, Inc. This project is an unofficial fan creation.
+
+Project-owned code and original material in this revision are licensed under [GNU GPL v3.0](LICENSE) (GPL-3.0-only). Third-party code, fonts, imagery, data, and brand assets retain their own terms and attributions. [Previous license and copyright notice](licenses/previous-license.txt). Riot Games artwork and marks remain subject to Riot Games’ terms.
